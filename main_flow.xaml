@@ -96,6 +96,8 @@
       <Variable x:TypeArguments="x:String" Name="uname" />
       <Variable x:TypeArguments="sd:DataTable" Name="CallsDT" />
       <Variable x:TypeArguments="x:String" Name="chars" />
+      <Variable x:TypeArguments="sd:DataTable" Name="NPS_statusDT" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="now" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -339,20 +341,18 @@
                                                   <av:Size x:Key="ShapeSize">200,66</av:Size>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <Sequence DisplayName="NPS" sap:VirtualizedContainerService.HintSize="615,1556" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                                              <Sequence DisplayName="NPS" sap:VirtualizedContainerService.HintSize="667,2324" sap2010:WorkflowViewState.IdRef="Sequence_2">
                                                 <Sequence.Variables>
                                                   <Variable x:TypeArguments="s:String[]" Name="CharsArray" />
                                                   <Variable x:TypeArguments="x:String" Name="randAlpha" />
-                                                  <Variable x:TypeArguments="sd:DataTable" Name="NPS_statusDT" />
-                                                  <Variable x:TypeArguments="ui:GenericValue" Name="now" />
                                                 </Sequence.Variables>
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:BuildDataTable DataTable="[NPS_statusDT]" DisplayName="Nps Status DT" sap:VirtualizedContainerService.HintSize="573,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;SR&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;CallType&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;NpsStatus&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;URL&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                                                <Assign DisplayName="Chars" sap:VirtualizedContainerService.HintSize="573,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                                <ui:BuildDataTable DataTable="[NPS_statusDT]" DisplayName="Nps Status DT" sap:VirtualizedContainerService.HintSize="625,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;SR&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;CallType&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;NpsStatus&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;URL&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+                                                <Assign DisplayName="Chars" sap:VirtualizedContainerService.HintSize="625,60" sap2010:WorkflowViewState.IdRef="Assign_2">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="x:String">[chars]</OutArgument>
                                                   </Assign.To>
@@ -360,7 +360,7 @@
                                                     <InArgument x:TypeArguments="x:String" xml:space="preserve">a b c d e f g h I j k l m n o  p q r s t u v w x y z</InArgument>
                                                   </Assign.Value>
                                                 </Assign>
-                                                <Assign DisplayName="Chars Array" sap:VirtualizedContainerService.HintSize="573,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                                <Assign DisplayName="Chars Array" sap:VirtualizedContainerService.HintSize="625,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="s:String[]">[CharsArray]</OutArgument>
                                                   </Assign.To>
@@ -368,13 +368,13 @@
                                                     <InArgument x:TypeArguments="s:String[]">[chars.Split(" "c).ToArray]</InArgument>
                                                   </Assign.Value>
                                                 </Assign>
-                                                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[CallsDT]" DisplayName="NPS For Each Row" sap:VirtualizedContainerService.HintSize="573,638" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                                                <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[CallsDT]" DisplayName="NPS For Each Row" sap:VirtualizedContainerService.HintSize="625,1406" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                                                   <ui:ForEachRow.Body>
                                                     <ActivityAction x:TypeArguments="sd:DataRow">
                                                       <ActivityAction.Argument>
                                                         <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Row" />
                                                       </ActivityAction.Argument>
-                                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="539,518" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="591,1286" sap2010:WorkflowViewState.IdRef="Sequence_3">
                                                         <Sequence.Variables>
                                                           <Variable x:TypeArguments="x:String" Name="url" />
                                                           <Variable x:TypeArguments="x:String" Default="22032015924x" Name="SrAlpha" />
@@ -384,7 +384,7 @@
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <Assign DisplayName="randAlpha" sap:VirtualizedContainerService.HintSize="497,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                                        <Assign DisplayName="randAlpha" sap:VirtualizedContainerService.HintSize="549,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                                                           <Assign.To>
                                                             <OutArgument x:TypeArguments="x:String">[randAlpha]</OutArgument>
                                                           </Assign.To>
@@ -392,7 +392,7 @@
                                                             <InArgument x:TypeArguments="x:String">[CharsArray(New Random().Next(CharsArray.Length))]</InArgument>
                                                           </Assign.Value>
                                                         </Assign>
-                                                        <Assign DisplayName="SrAlpha" sap:VirtualizedContainerService.HintSize="497,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                                        <Assign DisplayName="SrAlpha" sap:VirtualizedContainerService.HintSize="549,60" sap2010:WorkflowViewState.IdRef="Assign_7">
                                                           <Assign.To>
                                                             <OutArgument x:TypeArguments="x:String">[SrAlpha]</OutArgument>
                                                           </Assign.To>
@@ -400,8 +400,8 @@
                                                             <InArgument x:TypeArguments="x:String">[Row("SR").ToString + randAlpha]</InArgument>
                                                           </Assign.Value>
                                                         </Assign>
-                                                        <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[Row(&quot;CallType&quot;).ToString]" sap:VirtualizedContainerService.HintSize="497,226" sap2010:WorkflowViewState.IdRef="Switch`1_2">
-                                                          <Sequence x:Key="Breakdown" DisplayName="BD NPS" sap:VirtualizedContainerService.HintSize="376,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                                        <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[Row(&quot;CallType&quot;).ToString]" sap:VirtualizedContainerService.HintSize="549,994" sap2010:WorkflowViewState.IdRef="Switch`1_2">
+                                                          <Sequence x:Key="Breakdown" DisplayName="BD NPS" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
                                                             <Sequence.Variables>
                                                               <Variable x:TypeArguments="x:String" Name="NpsStaus" />
                                                               <Variable x:TypeArguments="x:String" Name="NpsStatus" />
@@ -544,7 +544,7 @@
                                                             </ui:OpenBrowser>
                                                             <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{SrAlpha,Row(&quot;CallType&quot;).ToString,NpsStatus.Trim,url}]" DataTable="[NPS_statusDT]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="AddDataRow_6" />
                                                           </Sequence>
-                                                          <Sequence x:Key="Installation" DisplayName="INStallation NPS" sap:VirtualizedContainerService.HintSize="552,679" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                                          <Sequence x:Key="Installation" DisplayName="INStallation NPS" sap:VirtualizedContainerService.HintSize="509,722" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                                             <Sequence.Variables>
                                                               <Variable x:TypeArguments="x:String" Name="NpsStatus" />
                                                             </Sequence.Variables>
@@ -554,7 +554,7 @@
                                                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <Assign DisplayName="Installation URL" sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                                            <Assign DisplayName="Installation URL" sap:VirtualizedContainerService.HintSize="467,60" sap2010:WorkflowViewState.IdRef="Assign_11">
                                                               <Assign.To>
                                                                 <OutArgument x:TypeArguments="x:String">[url]</OutArgument>
                                                               </Assign.To>
@@ -562,7 +562,7 @@
                                                                 <InArgument x:TypeArguments="x:String">["https://crm.cogentlab.com/vf/i.php?i="+ System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(SrAlpha))]</InArgument>
                                                               </Assign.Value>
                                                             </Assign>
-                                                            <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser  Installation" sap:VirtualizedContainerService.HintSize="510,305" sap2010:WorkflowViewState.IdRef="OpenBrowser_4" Url="[url]">
+                                                            <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser  Installation" sap:VirtualizedContainerService.HintSize="467,305" sap2010:WorkflowViewState.IdRef="OpenBrowser_4" Url="[url]">
                                                               <ui:OpenBrowser.Body>
                                                                 <ActivityAction x:TypeArguments="x:Object">
                                                                   <ActivityAction.Argument>
@@ -591,7 +591,7 @@
                                                             </ui:OpenBrowser>
                                                             <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{SrAlpha,Row(&quot;CallType&quot;).ToString,NpsStatus.Trim,url}]" DataTable="[NPS_statusDT]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="467,185" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
                                                           </Sequence>
-                                                          <Sequence x:Key="Promo Installation" DisplayName="Promo Installation NPS" sap:VirtualizedContainerService.HintSize="552,679" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                                          <Sequence x:Key="Promo Installation" DisplayName="Promo Installation NPS" sap:VirtualizedContainerService.HintSize="509,722" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                                             <Sequence.Variables>
                                                               <Variable x:TypeArguments="x:String" Name="NpsStatus" />
                                                             </Sequence.Variables>
@@ -601,7 +601,7 @@
                                                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                                               </scg:Dictionary>
                                                             </sap:WorkflowViewStateService.ViewState>
-                                                            <Assign DisplayName="Installation URL" sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                                                            <Assign DisplayName="Installation URL" sap:VirtualizedContainerService.HintSize="467,60" sap2010:WorkflowViewState.IdRef="Assign_12">
                                                               <Assign.To>
                                                                 <OutArgument x:TypeArguments="x:String">[url]</OutArgument>
                                                               </Assign.To>
@@ -609,7 +609,7 @@
                                                                 <InArgument x:TypeArguments="x:String">["https://crm.cogentlab.com/vf/i.php?i="+ System.Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(SrAlpha))]</InArgument>
                                                               </Assign.Value>
                                                             </Assign>
-                                                            <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser  Installation" sap:VirtualizedContainerService.HintSize="510,305" sap2010:WorkflowViewState.IdRef="OpenBrowser_5" Url="[url]">
+                                                            <ui:OpenBrowser AutomaticallyDownloadWebDriver="{x:Null}" CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="Edge" DisplayName="Open Browser  Installation" sap:VirtualizedContainerService.HintSize="467,305" sap2010:WorkflowViewState.IdRef="OpenBrowser_5" Url="[url]">
                                                               <ui:OpenBrowser.Body>
                                                                 <ActivityAction x:TypeArguments="x:Object">
                                                                   <ActivityAction.Argument>
@@ -643,7 +643,7 @@
                                                     </ActivityAction>
                                                   </ui:ForEachRow.Body>
                                                 </ui:ForEachRow>
-                                                <Assign sap:VirtualizedContainerService.HintSize="573,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                                <Assign sap:VirtualizedContainerService.HintSize="625,60" sap2010:WorkflowViewState.IdRef="Assign_14">
                                                   <Assign.To>
                                                     <OutArgument x:TypeArguments="ui:GenericValue">[now]</OutArgument>
                                                   </Assign.To>
@@ -651,12 +651,12 @@
                                                     <InArgument x:TypeArguments="ui:GenericValue">[DateAndTime.Now]</InArgument>
                                                   </Assign.Value>
                                                 </Assign>
-                                                <ui:FormatValue DisplayName="Format Value" sap:VirtualizedContainerService.HintSize="573,59" sap2010:WorkflowViewState.IdRef="FormatValue_1" Value="[now]">
+                                                <ui:FormatValue DisplayName="Format Value" sap:VirtualizedContainerService.HintSize="625,59" sap2010:WorkflowViewState.IdRef="FormatValue_1" Value="[now]">
                                                   <ui:FormatValue.Format>
                                                     <ui:DateTimeFormatProvider Pattern="dd MMMM yyyy dddd hh mm" />
                                                   </ui:FormatValue.Format>
                                                 </ui:FormatValue>
-                                                <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="573,288" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[&quot;C:\Users\charan\Desktop\NPS data\nps&quot;+ now + &quot;.xlsx&quot;]">
+                                                <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="625,288" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="[&quot;C:\Users\charan\Desktop\NPS data\nps&quot;+ now + &quot;.xlsx&quot;]">
                                                   <ui:ExcelApplicationScope.Body>
                                                     <ActivityAction x:TypeArguments="ui:WorkbookApplication">
                                                       <ActivityAction.Argument>
@@ -668,7 +668,7 @@
                                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                           </scg:Dictionary>
                                                         </sap:WorkflowViewStateService.ViewState>
-                                                        <ui:ExcelWriteRange AddHeaders="False" DataTable="[NPS_statusDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="NPS Data" StartingCell="A1" />
+                                                        <ui:ExcelWriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[NPS_statusDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="NPS Data" />
                                                       </Sequence>
                                                     </ActivityAction>
                                                   </ui:ExcelApplicationScope.Body>
