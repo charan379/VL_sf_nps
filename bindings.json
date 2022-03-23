@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "resources": [
+    {
+      "resource": "asset",
+      "metadata": {
+        "name": {
+          "defaultValue": "almerps_voltas_siebel_creds",
+          "isExpression": false
+        },
+        "folderPath": {
+          "defaultValue": "Shared",
+          "isExpression": false
+        }
+      }
+    }
+  ]
+}
